@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../CSS/FAQ/HeaderFaq.css'
+import './HeaderFaq.css'
 
 export default function HeaderFaq() {
   return (

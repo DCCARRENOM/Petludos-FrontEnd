@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --Button: #FFF736;
+    --Text: #FDFEFF;
+
+    --TypeTitles: 'Inter', sans-serif;
+    --TypeContent: 'Archivo', sans-serif;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--TypeTitles);
+}
+
+p{
+    font-family: var(--TypeContent);
+    text-align: justify;
+}
+
+
+
+.containerPet {
+    width: min(70%, 110rem);
+    margin: 3rem auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;
+
+}
+
+.namePet {
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.petBtn {
+    border-radius: 10px;
+    text-transform: uppercase;
+    background-color: var(--Button);
+    text-decoration: underline;
+    font-weight: 400;
+
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+.ImagenTest {
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 14px;
+}

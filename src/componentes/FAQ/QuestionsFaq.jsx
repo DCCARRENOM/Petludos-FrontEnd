@@ -1,6 +1,6 @@
 import React from 'react'
 import QuestionImage from '../../IMGs/QuestionImage.png'
-import '../../CSS/FAQ/QuestionsFaq.css'
+import './QuestionsFaq.css'
 
 export default function QuestionsFaq() {
   return (

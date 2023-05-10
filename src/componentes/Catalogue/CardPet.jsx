@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../CSS/Catalogue/CardPet.css'
+import './CardPet.css'
 import CardTest from '../../IMGs/CardTest.jpg'
 
 export default function CardPet() {
