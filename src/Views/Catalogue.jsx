@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Catalogue.css'
 import NavBarPetludos from '../componentes/NavBarPetludos'
-import HeaderFaq from '../componentes/FAQ/HeaderFaq'
+import HeaderCatalogue from '../componentes/Catalogue/HeaderCatalogue'
 import CardPet from '../componentes/Catalogue/CardPet'
 import FooterPetludos from '../componentes/FooterPetludos'
 
@@ -11,7 +11,7 @@ export default function Catalogue() {
     return (
         <>
             <NavBarPetludos></NavBarPetludos>
-            <HeaderFaq></HeaderFaq>
+            <HeaderCatalogue></HeaderCatalogue>
             <article className='containerCardPet'>
                 <CardPet></CardPet>
                 <CardPet></CardPet>
