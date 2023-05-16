@@ -9,7 +9,7 @@ import { Routes, Route, useNavigate, Link } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
   const [user, setInput] = useState({
-    id: "",
+    identifier: "",
     password: "",
   });
 
@@ -31,25 +31,25 @@ export default function Login() {
   }
 
 
-  const sendLogin = async (User) => {
+  const sendLogin = async (user) => {
     try{
         user.id = parseInt(user.id)
-        const response = await fetch(`http://localhost:8081/admin/login?k_id=${User.id}&password=${User.password}`, {
+        const response = await fetch(`http://localhost:1337/api/auth/local`, {
           method: 'POST',
-          body: JSON.stringify(User),
+          body: JSON.stringify(user),
           headers: {
             'Content-Type': 'application/json'
           }
         })
         const data = await response.json()
         console.log(data)
-        if(data == true){
+        if(data.jwt !=""){
           Swal.fire({
             title: "¡Login exitoso!",
             icon: "success",
             button: "Aww yiss!",
           });
-            navigate('/createOrder', {state: {id: User.id}});
+            navigate('/', {state: {id: user.id}});
           }else{
             Swal.fire({
               icon: 'error',
@@ -84,8 +84,8 @@ export default function Login() {
         <input
           className="login-input"
           type="text"
-          placeholder="Ingrese su ID"
-          name="id"
+          placeholder="Ingrese su username"
+          name="identifier"
           onChange={handleLogin}
         />
         <input
