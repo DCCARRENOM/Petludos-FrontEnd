@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Views
 import Landing from './Views/Landing';
@@ -20,6 +20,7 @@ function App() {
           <Route path='/catalogo/*' element={<Catalogue />}>
             <Route path='mascota' element={<Pet />} />
           </Route>
+          <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
       </BrowserRouter>
 
