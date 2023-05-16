@@ -10,7 +10,8 @@ import FooterPetludos from '../componentes/FooterPetludos'
 
 export default function Catalogue() {
     
-    const [catalogoPets, setCatalogoPets] = useState([])
+    const [catalogoPets, setCatalogoPets] = useState([]);
+    const [metaPets, setMetaPets] = useState([]);
 
     useEffect(() => {
       GET_Pets();
@@ -18,12 +19,13 @@ export default function Catalogue() {
     
 
     const GET_Pets = async() => {
-        const response = await fetch('http://localhost:1337/api/pets/');
+        const response = await fetch('http://localhost:1337/api/pets/?populate[picture][populate]=*');
         const data = await response.json();
         
-        console.log(data);
+        // console.log(data);
 
-        setCatalogoPets(data);
+        setCatalogoPets(data.data);
+        setMetaPets(data.meta)
     }
 
 
@@ -32,10 +34,11 @@ export default function Catalogue() {
             <NavBarPetludos></NavBarPetludos>
             <HeaderCatalogue></HeaderCatalogue>
             <article className='containerCardPet'>
-                <CardPet></CardPet>
-                <CardPet></CardPet>
-                <CardPet></CardPet>
-                <CardPet></CardPet>
+            {!catalogoPets ? 'CARGANDO':
+                catalogoPets.map((card, index) =>{
+                    return <CardPet info={card} key={index}></CardPet>
+                })
+            }
             </article>
             <FooterPetludos></FooterPetludos>
         </>
