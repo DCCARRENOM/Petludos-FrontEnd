@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import DropdownList from "react-widgets/DropdownList";
 import "react-widgets/styles.css";
 import Swal from 'sweetalert2';
-
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 export default function Register() {
+
+  const navigate = useNavigate();
+
   const [persona, setPersona] = useState({
-    k_numero: "",
-    tipo: "",
-    n_nombre: "",
-    n_apellido: "",
-    o_telefono: "",
-    i_genero: "",
+    username: "",
+    email: "",
+    password: "",
+    name: "",
+    lastname: "",
+    phone: "",
   });
 
   const handlePersona = (e) => {
@@ -22,27 +24,25 @@ export default function Register() {
     });
   };
 
+  const navigateToLogin = (e) => {
+    e.preventDefault();
+    navigate("/login")
+  }
 
-
-  const handleSendResponsable = (e) => {
-    // e.preventDefault();
-    // let responsableCompleto;
-    // persona.k_numero = Number(persona.k_numero);
-    // persona.o_telefono = Number(persona.o_telefono);
-    
-    // responsable.es_propietario = true;
-    // responsable.o_tel_residencia = Number(responsable.o_tel_residencia);
-    // responsable.o_tel_trabajo = Number(responsable.o_tel_trabajo);
-    // responsableCompleto = { persona, responsable, apartamento:Number(AptoDropdown) };
-    // console.log(responsableCompleto);
-    // sendResponsable(responsableCompleto);
-
-    // successOrder();
+  const handleRegisterUser = (e) => {
+    e.preventDefault();
+    let newUser;
+    console.log("zszzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",persona)
+    newUser = persona;
+    console.log(newUser);
+    registerUser(newUser);
+    successOrder();
+    navigateToLogin(e);
   };
 
-  const sendResponsable = async (object) => {
+  const registerUser = async (object) => {
     const response = await fetch(
-      "http://localhost:8081/persona/save_persona_responsable",
+      "http://localhost:1337/api/auth/local/register",
       {
         method: "POST",
         body: JSON.stringify(object),
@@ -68,47 +68,47 @@ export default function Register() {
   return (
     <div className="containerFormResponsable">
       <h2>Registro nuevo usuario</h2>
-      <form className="formLogin" onSubmit={handleSendResponsable}>
+      <form className="formLogin" onSubmit={handleRegisterUser}>
         <p>Username: </p>
         <input
           className="login-input"
           type="text"
-          name="k_numero"
+          name="username"
           onChange={handlePersona}
         />
         <p>Email: </p>
         <input
           className="login-input"
           type="text"
-          name="tipo"
+          name="email"
           onChange={handlePersona}
         />
         <p>Password: </p>
         <input
           className="login-input"
           type="text"
-          name="n_nombre"
+          name="password"
           onChange={handlePersona}
         />
         <p>Nombres: </p>
         <input
           className="login-input"
           type="text"
-          name="n_apellido"
+          name="name"
           onChange={handlePersona}
         />
         <p>Apellidos: </p>
         <input
           className="login-input"
           type="text"
-          name="o_telefono"
+          name="lastname"
           onChange={handlePersona}
         />
         <p>Telefono: </p>
         <input
           className="login-input"
           type="text"
-          name="i_genero"
+          name="phone"
           onChange={handlePersona}
         />
         <button className="login-boton">Registrar</button>
