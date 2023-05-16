@@ -27,6 +27,10 @@ function NavBarPetludos() {
     navigate("/faq");
   }
 
+  const navigateToLogin = (e) => {
+    e.preventDefault();
+    navigate("/login")
+  }
 
 
   return (
@@ -53,7 +57,7 @@ function NavBarPetludos() {
         <Navbar.Text className="NavBar-Text">
           <FontAwesomeIcon className="NavBar-Icon" icon={faGear} style={{ color: "#ffffff", }}/>
           <FontAwesomeIcon className="NavBar-Icon" icon={faBell} style={{ color: "#ffffff" }} />
-          <b className="handHover">Ingresar</b>
+          <b className="handHover" onClick={(e)=>navigateToLogin(e)}>Ingresar</b>
         </Navbar.Text>
       </Navbar.Collapse>
 
