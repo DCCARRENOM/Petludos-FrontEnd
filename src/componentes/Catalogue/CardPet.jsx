@@ -12,9 +12,9 @@ export default function CardPet({ info: { attributes, id } }) {
       <div className='CardInfo'>
         <h4 className='CardTitle'>{attributes.name}</h4>
         {/* <button className='CardBtn'>Conóceme</button> */}
-        <Link to={`/mascota/${id}`}>
-          <button className='CardBtn'>Conóceme</button>
-        </Link>
+        
+          <button className='CardBtn'><Link to={`/mascota/${id}`}>Conóceme</Link></button>
+        
       </div>
 
 

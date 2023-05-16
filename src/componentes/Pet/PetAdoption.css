@@ -3,6 +3,13 @@
 :root {
     --Button: #FFF736;
     --Text: #FDFEFF;
+    --isPlayful:#FF8713;
+    --isQuiet:#0187C6;
+    --isgoodWithKids:#BE99F2;
+    --isLoving:#D02D3B;
+    --isSociable:#05A62D;
+    --isSpoiled:#F2CB05;
+
 
     --TypeTitles: 'Inter', sans-serif;
     --TypeContent: 'Archivo', sans-serif;
@@ -55,4 +62,37 @@ p{
 }
 .descPet{
     text-transform: capitalize;
+}
+
+/* Personalidad */
+.containerAtributos{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+.personalityContainer{
+    color: var(--Text);
+    display: inline;
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+}
+
+.isPlayful{
+    background-color: var(--isPlayful);
+}
+.isQuiet{
+    background-color: var(--isQuiet);
+}
+.isgoodWithKids{
+    background-color: var(--isgoodWithKids);
+}
+.isLoving{
+    background-color: var(--isLoving);
+}
+.isSociable{
+    background-color: var(--isSociable);
+}
+.isSpoiled{
+    background-color: var(--isSpoiled);
 }
