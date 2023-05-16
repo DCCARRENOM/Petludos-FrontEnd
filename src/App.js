@@ -1,30 +1,28 @@
 import './App.css';
-import NavBarPetludos from './componentes/NavBarPetludos';
-import BodyPetludos from './componentes/BodyPetludos';
-import TestimonyPetludos from './componentes/TestimonyPetludos';
-import FooterPetludos from './componentes/FooterPetludos';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Views
+import Landing from './Views/Landing';
 import Faq from './Views/Faq';
 import Catalogue from './Views/Catalogue';
 import Pet from './Views/Pet';
 
 
+
 function App() {
   return (
     <div id="home">
-      {/* <NavBarPetludos />
-      <BodyPetludos />
-      <TestimonyPetludos />
-      <FooterPetludos /> */}
 
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/faq' element={<Faq />} />
+          <Route path='/catalogo/*' element={<Catalogue />}>
+            <Route path='mascota' element={<Pet />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
 
-
-
-      {/* VIEWS TEST */}
-      {/* <Faq></Faq> */}
-      <Catalogue></Catalogue>
-      {/* <Pet></Pet> */}
 
 
     </div>
