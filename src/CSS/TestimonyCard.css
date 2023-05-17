@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.ProfilePhotoContainer img{
+    object-fit: cover;
+}
+
 .ProfileName {
     font-family: 'Inter';
     font-style: normal;
