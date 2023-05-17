@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "react-widgets/styles.css";
+import LoginImage from "../../IMGs/LoginImage.jpg"
+import NavBarPetludos from "../../componentes/NavBarPetludos"
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
@@ -66,8 +67,15 @@ export default function Register() {
 }
 
   return (
-    <div className="containerFormResponsable">
-      <h2>Registro nuevo usuario</h2>
+    <>
+    <NavBarPetludos/>
+    <div className="containerGeneralRegister">
+      <div className="containerFormRegister">
+        <div className="ImageRegister">
+        <img src={LoginImage} />
+        </div>
+        <div className="FormRegisterDisplay">
+        <h1 className="FormHeader">unete a la familia <strong>PET</strong>ludos</h1>
       <form className="formLogin" onSubmit={handleRegisterUser}>
         <p>Username: </p>
         <input
@@ -86,7 +94,7 @@ export default function Register() {
         <p>Password: </p>
         <input
           className="login-input"
-          type="text"
+          type="password"
           name="password"
           onChange={handlePersona}
         />
@@ -113,6 +121,9 @@ export default function Register() {
         />
         <button className="login-boton">Registrar</button>
       </form>
+      </div>
+      </div>
     </div>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import NavBarPetludos from "../../componentes/NavBarPetludos";
+import LoginImage from "../../IMGs/LoginImage.jpg"
 import "./Login.css";
-import "react-widgets/styles.css";
 
 import Swal from "sweetalert2";
 import { Routes, Route, useNavigate, Link } from "react-router-dom";
@@ -70,34 +71,36 @@ export default function Login() {
       }
 
   return (
-    <div className="containerFormLogin">
-      <h1>Ingreso de administrador
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="76" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#D9560B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="10" r="3" />
-        <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-     </svg>
-      </h1>
-      <hr></hr>
+    <>
+    <NavBarPetludos />
+    <div className="containerGeneralLogin">
+      <div className="ContainerFormLogin">
+        <div className="ImageLogin">
+        <img src={LoginImage} />
+        </div>
+        <div className="FormLoginDisplay">
+      <h1 className="FormHeader">Inicia sesión en la familia <strong>PET</strong>ludos</h1>
       <form className="formLogin" onSubmit={handleSendLogin}>
+      <h1 className="FormLabel">Correo electronico</h1>
         <input
           className="login-input"
           type="text"
-          placeholder="Ingrese su username"
           name="identifier"
           onChange={handleLogin}
         />
+        <h1 className="FormLabel">Contraseña</h1>
         <input
           className="login-input"
           type="password"
-          placeholder="Ingrese su contraseña"
           name="password"
           onChange={handleLogin}
         />
-        <Link onClick={(e) => navigateToRegister(e)}>Registrate</Link>
         <button className="login-boton">Ingresar</button>
+        <Link className="RegisterText" onClick={(e) => navigateToRegister(e)}>¿No tienes cuenta aún?</Link>
       </form>
+      </div>
+      </div>
     </div>
+    </>
   );
 }

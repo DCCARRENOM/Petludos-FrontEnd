@@ -1,20 +1,53 @@
-.containerFormResponsable {
-    background-color: var(--container);
-    width: 50%;
-    height: auto;
-    margin: 100px auto;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
 
-    /* padding: 10rem; */
-    padding: 2rem;
+.containerGeneralRegister {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    border-radius: 18px 18px 18px 18px;
-    -moz-border-radius: 18px 18px 18px 18px;
-    -webkit-border-radius: 18px 18px 18px 18px;
-    border: 0px solid #000000;
+.containerFormRegister{
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+}
 
-    -webkit-box-shadow: 0px 0px 38px -4px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 38px -4px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 38px -4px rgba(0, 0, 0, 1);
+.ImageRegister {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FDFEFF;
+    border: 0.1em solid #000000;
+    border-radius: 3em 0 0 3em;
+    padding: 5em;
+    border-right: 0;
+}
+
+.ImageRegister>img {
+    width: 10em;
+    border-radius: 100%;
+}
+
+.FormRegisterDisplay {
+    display: flex;
+    flex-direction: column;
+    background: #4355A8;
+    padding: 1em;
+    margin: 0;
+    border-radius: 0 3em 3em 0;
+    border: 0.1em solid #000000;
+    border-left: 0;
+    padding: 2em 5em 0 5em;
+}
+
+.FormHeader {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .formLogin {
@@ -23,9 +56,14 @@
     flex-direction: column;
     padding: 1rem;
 }
+
 .formLogin >p{
-    margin: auto;
-    margin-bottom: 1rem;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1em;
+    color: #FDFEFF;
+    margin: 0;
 }
 
 .login-input {
