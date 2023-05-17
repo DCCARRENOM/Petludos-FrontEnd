@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import NavBarPetludos from "../../componentes/NavBarPetludos";
 import LoginImage from "../../IMGs/LoginImage.jpg"
 import "./Login.css";
-
 import Swal from "sweetalert2";
 import { Routes, Route, useNavigate, Link } from "react-router-dom";
-
 
 export default function Login() {
   const navigate = useNavigate();
@@ -45,12 +43,12 @@ export default function Login() {
         const data = await response.json()
         console.log(data)
         if(data.jwt !=""){
-          Swal.fire({
+         /* Swal.fire({
             title: "¡Login exitoso!",
             icon: "success",
             button: "Aww yiss!",
-          });
-            navigate('/', {state: {id: user.id}});
+         });*/
+          navigate('/', {state: {id: "melo"}});
           }else{
             Swal.fire({
               icon: 'error',
