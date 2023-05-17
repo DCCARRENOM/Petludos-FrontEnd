@@ -3,21 +3,18 @@ import Card from "react-bootstrap/Card";
 import profile from '../IMGs/ProfileTestimony.jpg';
 import '../CSS/TestimonyCard.css'
 
-function TestimonyCard( {Nombre}) {
+function TestimonyCard( {info:{attributes}}) {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem",  height:"30rem"}}>
       <Card.Body>
         <div className="ProfilePhotoContainer">
-            <img className="ProfilePhoto" src={profile} />
+            <img className="ProfilePhoto" src={`http://localhost:1337${attributes.pet.data.attributes.picture.data.attributes.url}`} />
         </div>
         <Card.Subtitle className="mb-2 text-muted">
-            <h1 className="ProfileName"> {Nombre}</h1>
+            <h1 className="ProfileName"> {attributes.pet.data.attributes.name}</h1>
         </Card.Subtitle>
         <Card.Text className="ProfileText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua. Placerat duis ultricies lacus sed. Dictum non consectetur 
-            a erat nam at lectus urna. Placerat in egestas erat imperdiet sed euismod nisi. Velit laoreet 
-            id donec ultrices tincidunt arcu non.
+            {attributes.description}
         </Card.Text>
       </Card.Body>
     </Card>
