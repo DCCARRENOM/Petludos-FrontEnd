@@ -22,6 +22,39 @@ export default function PetAdoption() {
     setPersonality(data.data.attributes.personality.data.attributes);
   }
 
+  const handle_AdoptionProcess = (e) => {
+    e.preventDefault();
+    POST_AdoptionProcess();
+  }
+
+  const POST_AdoptionProcess = async () => {
+    const urlPost = 'http://localhost:1337/api/adoption-processes';
+    const idPet = parseInt(id);
+
+    const objectExample = {
+      data: {
+        message: "Estoy muy interesado en conocer cuales son las etapas del proceso de adoptacion de esta mascota",
+        state: 1,
+        pet: idPet,
+        candidate: 5 //TODO: Cambiar este ID por el del login
+      }
+    }
+    console.log(objectExample);
+
+
+    const response = await fetch(urlPost, {
+      method: 'POST',
+      body: JSON.stringify(objectExample),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    console.log(data);
+  }
+
+  // const 
+
   useEffect(() => {
     GET_InfoPet(id);
   }, [])
@@ -47,7 +80,7 @@ export default function PetAdoption() {
               {/* <div className="personalityContainer isPlayful">Es juguetón</div> */}
 
             </section>
-            <button className='petBtn'>Adóptame</button>
+            <button className='petBtn' onClick={handle_AdoptionProcess}>Adóptame</button>
           </article>
         </main>)
       }
