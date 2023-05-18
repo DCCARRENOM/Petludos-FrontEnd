@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import './PetAdoption.css'
 
 import CardTest from '../../IMGs/CardTest.jpg'
@@ -62,6 +63,20 @@ export default function PetAdoption({ UserID }) {
     });
     const data = await response.json();
     console.log(data);
+
+    if(data){
+      Swal.fire({
+        title: "Solicitud presentada",
+        icon: "success",
+        button: "Aww yiss!",
+     });
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Error',
+      })
+    }
   }
 
   const GET_userByEmail = async (email) => {
