@@ -6,14 +6,16 @@ import './PetAdoption.css'
 
 import CardTest from '../../IMGs/CardTest.jpg'
 
-export default function PetAdoption({UserID} ) {
+export default function PetAdoption({ UserID }) {
   const navigate = useNavigate();
-  console.log("ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-  console.log(UserID)
+  // console.log("ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  // console.log(UserID)
+  const UserEmail = UserID;
   const { id } = useParams();
   const [infoPet, setInfoPet] = useState([]);
   const [Loading, setLoading] = useState(false);
   const [Personality, setPersonality] = useState([]);
+  const [UsuarioID, setUsuarioID] = useState([]);
 
   const GET_InfoPet = async (idPet) => {
     const response = await fetch(`http://localhost:1337/api/pets/${idPet}?populate[picture][populate]=*&populate[personality][populate]=*`);
@@ -27,7 +29,8 @@ export default function PetAdoption({UserID} ) {
 
   const handle_AdoptionProcess = (e) => {
     e.preventDefault();
-    POST_AdoptionProcess();
+    GET_userByEmail(UserEmail);
+    
   }
 
   const navigateToLogin = (e) => {
@@ -35,7 +38,7 @@ export default function PetAdoption({UserID} ) {
     navigate("/login")
   }
 
-  const POST_AdoptionProcess = async () => {
+  const POST_AdoptionProcess = async (UserID) => {
     const urlPost = 'http://localhost:1337/api/adoption-processes';
     const idPet = parseInt(id);
 
@@ -44,7 +47,7 @@ export default function PetAdoption({UserID} ) {
         message: "Estoy muy interesado en conocer cuales son las etapas del proceso de adoptacion de esta mascota",
         state: 1,
         pet: idPet,
-        candidate: 5 //TODO: Cambiar este ID por el del login
+        candidate: UserID
       }
     }
     console.log(objectExample);
@@ -61,7 +64,14 @@ export default function PetAdoption({UserID} ) {
     console.log(data);
   }
 
-  // const 
+  const GET_userByEmail = async (email) => {
+    const response = await fetch(`http://localhost:1337/api/users?filters[email][$eq]=${email}`);
+    const data = await response.json();
+
+    console.log(data[0].id);
+    setUsuarioID(data[0].id);
+    POST_AdoptionProcess(data[0].id);
+  }
 
   useEffect(() => {
     GET_InfoPet(id);

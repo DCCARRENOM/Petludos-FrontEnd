@@ -42,7 +42,7 @@ export default function Login() {
         const data = await response.json()
         console.log("AKIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
         console.log("DATA JWT:"+data.jwt)
-        console.log("data:"+data)
+        console.log(data)
         console.log(user)
         if(data.jwt !=undefined){
          Swal.fire({
@@ -51,6 +51,7 @@ export default function Login() {
             button: "Aww yiss!",
          });
             navigate('/Logged', {state: {id: user.identifier}});
+            // navigate('/Logged', {state: {id: data.user.id}});
           }else{
             Swal.fire({
               icon: 'error',
