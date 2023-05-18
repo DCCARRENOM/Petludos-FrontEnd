@@ -9,7 +9,7 @@ export default function Pet() {
     <>
       <NavBarPetludos></NavBarPetludos>
       <HeaderPet></HeaderPet>
-      <PetAdoption></PetAdoption>
+      <PetAdoption UserID={"No logueado"}/>
       <FooterPetludos></FooterPetludos>
       
     </>

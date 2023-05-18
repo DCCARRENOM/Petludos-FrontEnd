@@ -8,6 +8,10 @@ import Catalogue from './Views/Catalogue';
 import Pet from './Views/Pet';
 import Login from './Views/Login/Login'
 import Register from './Views/Register/Register'
+import LandingLogged from './Views/LandingLogged';
+import CatalogueLogged from './Views/CatalogueLogged';
+import FaqLogged from './Views/FaqLogged';
+import PetLogged from './Views/PetLogged';
 
 function App() {
   return (
@@ -22,6 +26,11 @@ function App() {
           <Route path='*' element={<Navigate to='/' />} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          {/*Vistas Logueado*/}
+          <Route path='/Logged' element={<LandingLogged/>}/>
+          <Route path='/catalogoLogged' element={<CatalogueLogged />}/>
+          <Route path='/faqLogged' element={<FaqLogged />} />
+          <Route path='/mascotaLogged/:id' element={<PetLogged />} />
         </Routes>
       </BrowserRouter>
 

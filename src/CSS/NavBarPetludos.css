@@ -31,3 +31,7 @@ pointer-events: none;
 .NavBar-Icon{
     margin-right: 10px;
 }
+
+.UserName{
+    margin-right: 1em;
+}

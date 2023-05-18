@@ -15,20 +15,20 @@ function NavBarPetludosLogged( {UserID}) {
 
   const navigateToHome = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/Logged", {state: {id: UserID}});
   }
   const navigateToAdoption = (e) => {
     e.preventDefault();
-    navigate("/catalogo");
+    navigate("/catalogoLogged", {state: {id: UserID}});
   }
   const navigateToFAQ = (e) => {
     e.preventDefault();
-    navigate("/faq");
+    navigate("/faqLogged", {state: {id: UserID}});
   }
 
   const navigateToLogin = (e) => {
     e.preventDefault();
-    navigate('/', {state: {id:undefined}});
+    navigate('/');
   }
 
 
@@ -56,7 +56,7 @@ function NavBarPetludosLogged( {UserID}) {
         <Navbar.Text className="NavBar-Text">
           <FontAwesomeIcon className="NavBar-Icon" icon={faGear} style={{ color: "#ffffff", }}/>
           <FontAwesomeIcon className="NavBar-Icon" icon={faBell} style={{ color: "#ffffff" }} />
-          <h1>{UserID}</h1>
+          <b className="UserName">{UserID}</b>
           <b className="handHover" onClick={(e)=>navigateToLogin(e)}>Cerrar sesión</b>
         </Navbar.Text>
       </Navbar.Collapse>

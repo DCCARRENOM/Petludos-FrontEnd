@@ -32,7 +32,6 @@ export default function Login() {
 
   const sendLogin = async (user) => {
     try{
-        user.id = parseInt(user.id)
         const response = await fetch(`http://localhost:1337/api/auth/local`, {
           method: 'POST',
           body: JSON.stringify(user),
@@ -41,14 +40,17 @@ export default function Login() {
           }
         })
         const data = await response.json()
-        console.log(data)
-        if(data.jwt !=""){
-         /* Swal.fire({
+        console.log("AKIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+        console.log("DATA JWT:"+data.jwt)
+        console.log("data:"+data)
+        console.log(user)
+        if(data.jwt !=undefined){
+         Swal.fire({
             title: "¡Login exitoso!",
             icon: "success",
             button: "Aww yiss!",
-         });*/
-          navigate('/', {state: {id: "melo"}});
+         });
+            navigate('/Logged', {state: {id: user.identifier}});
           }else{
             Swal.fire({
               icon: 'error',

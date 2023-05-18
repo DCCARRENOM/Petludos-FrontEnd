@@ -1,12 +1,15 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './PetAdoption.css'
 
 import CardTest from '../../IMGs/CardTest.jpg'
 
-export default function PetAdoption() {
-
+export default function PetAdoption({UserID} ) {
+  const navigate = useNavigate();
+  console.log("ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  console.log(UserID)
   const { id } = useParams();
   const [infoPet, setInfoPet] = useState([]);
   const [Loading, setLoading] = useState(false);
@@ -25,6 +28,11 @@ export default function PetAdoption() {
   const handle_AdoptionProcess = (e) => {
     e.preventDefault();
     POST_AdoptionProcess();
+  }
+
+  const navigateToLogin = (e) => {
+    e.preventDefault();
+    navigate("/login")
   }
 
   const POST_AdoptionProcess = async () => {
