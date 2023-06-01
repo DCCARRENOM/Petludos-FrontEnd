@@ -7,7 +7,7 @@ import FooterPetludos from '../componentes/FooterPetludos'
 export default function Pet({setAccessibleText, accessibleText}) {
   return (
     <>
-      <NavBarPetludos></NavBarPetludos>
+      <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}></NavBarPetludos>
       <HeaderPet></HeaderPet>
       <PetAdoption UserID={"No logueado"}/>
       <FooterPetludos></FooterPetludos>
