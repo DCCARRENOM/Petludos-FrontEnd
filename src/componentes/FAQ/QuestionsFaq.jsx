@@ -31,7 +31,7 @@ export default function QuestionsFaq() {
           </section>
         </div>
 
-        <img src={QuestionImage} />
+        <img src={QuestionImage} alt='Cachorra de color beige con blanco, viendo hacia arriba'/>
       </article>
 
     </>

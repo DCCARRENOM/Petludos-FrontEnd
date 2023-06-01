@@ -11,10 +11,10 @@ export default function CardPet({ info: { attributes, id }}) {
     e.preventDefault();
     navigate(`/mascota/${id}`);
   }
-
+  console.log(attributes);
   return (
     <section className='CardPet'>
-      <div className='CardImage'><img src={urlPet} alt={`CardImage${id}`} /></div>
+      <div className='CardImage'><img src={urlPet} alt={attributes.alternative_text} /></div>
       <div className='CardInfo'>
         <h4 className='CardTitle'>{attributes.name}</h4>
         {/* <button className='CardBtn'>Conóceme</button> */}

@@ -98,7 +98,7 @@ export default function PetAdoption({ UserID }) {
     <>
       {!Loading ? 'CARGANDO' : (
         <main className='containerPet'>
-          <img src={`http://localhost:1337${infoPet.attributes.picture.data.attributes.url}`} alt="" className='ImagenTest' />
+          <img src={`http://localhost:1337${infoPet.attributes.picture.data.attributes.url}`} alt={infoPet.attributes.alternative_text} className='ImagenTest' />
           <article>
             <h2>Dale un hogar a <span className='namePet'>{infoPet.attributes.name}</span></h2>
             <h4><i className='descPet'>{infoPet.attributes.breed}</i></h4>

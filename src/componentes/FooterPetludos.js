@@ -9,14 +9,14 @@ function FooterPetludos () {
     return(
         <>
         <div className="FooterImageContainer">
-            <img className="FooterImage" src={FooterImage} />
+            <img className="FooterImage" src={FooterImage} alt="perro de color naranja con beige viendo hacia el frente"/>
         </div>
         <div className="FooterBar">
             <h1><strong>PET</strong>LUDOS</h1>
             <div className="FooterIcons">
-                <img className="GitFooter" src={Github}/>
-                <img className="InstagramFooter" src={Instagram}/>
-                <img className="FacebookFooter" src={Facebook}/>
+                <img className="GitFooter" src={Github} alt="logo github"/>
+                <img className="InstagramFooter" src={Instagram} alt="logo instagram"/>
+                <img className="FacebookFooter" src={Facebook} alt="logo facebook"/>
             </div>
         </div>
         <div className="FooterEnd">

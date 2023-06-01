@@ -16,20 +16,15 @@ function BodyPetludos() {
       </svg>
       <div className="Main-Container">
         <div className="BodyImages">
-          <img className="BodyImage" src={BodyImage} />
+          <img className="BodyImage" src={BodyImage} alt="Dos cachorros de color beige sacando la lengua, sentados sobre el pasto"/>
         </div>
         <div className="BodyText">
           <h1>
             <strong>PET</strong>LUDOS
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.{" "}
+          ¡Bienvenido a nuestra página de adopción de mascotas! Aquí encontrarás a tu compañero peludo perfecto. Nuestro objetivo es unir a las mascotas necesitadas con familias amorosas, brindándoles un hogar lleno de amor y cuidado.
+          ¡No pierdas la oportunidad de cambiar la vida de una mascota y llenar tu hogar de felicidad! ¡Comienza tu viaje de adopción hoy mismo!
           </p>
         </div>
       </div>

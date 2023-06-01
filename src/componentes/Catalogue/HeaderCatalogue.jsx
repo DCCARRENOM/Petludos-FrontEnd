@@ -18,7 +18,7 @@ export default function HeaderCatalogue() {
             </svg>
             <div className="Main-Container2">
                 <div>
-                    <img src={HeaderCatalogueImg} alt="" />
+                    <img src={HeaderCatalogueImg} alt="Perro de color blanco y beige, durmiendo sobre una cobija" />
                 </div>
                 <section className='headerText'>
                     <h3>Proceso de adopción</h3>

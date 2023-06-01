@@ -41,7 +41,7 @@ function NavBarPetludos() {
           width="30"
           height="30"
           className="d-inline-block align-top"
-          alt="React Bootstrap logo"
+          alt="Logo Petludos, perro de color naranja animado"
         />
       </Navbar.Brand>
       <Navbar.Brand className="NavBar-Text" id="pageName"><strong className="Bold">PET</strong>LUDOS</Navbar.Brand>
