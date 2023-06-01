@@ -1,5 +1,7 @@
 import './App.css';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 
 // Views
 import Landing from './Views/Landing';
@@ -14,12 +16,15 @@ import FaqLogged from './Views/FaqLogged';
 import PetLogged from './Views/PetLogged';
 
 function App() {
+
+  const [accessibleText, setAccessibleText] = useState('normal');  //normal || accessibility
+
   return (
     <div id="home">
 
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Landing />} />
+          <Route path='/' element={<Landing setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>} />
           <Route path='/faq' element={<Faq />} />
           <Route path='/catalogo' element={<Catalogue />}/>
           <Route path='/mascota/:id' element={<Pet />} />

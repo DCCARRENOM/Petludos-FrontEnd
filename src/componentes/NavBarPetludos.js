@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 
-function NavBarPetludos() {
+function NavBarPetludos({setAccessibleText, accessibleText}) {
   
   const navigate = useNavigate();
 
@@ -32,9 +32,19 @@ function NavBarPetludos() {
     navigate("/login")
   }
 
+  const handleAccessibility = () => {
+    console.log('acambiop');
+    if(accessibleText=='normal'){
+      setAccessibleText('accessibility')
+    }else{
+      setAccessibleText('normal')
+    }
+
+  }
+
 
   return (
-    <Navbar expand="lg" id="principalNav">
+    <Navbar expand="lg" id="principalNav" className={accessibleText}>
       <Navbar.Brand>
         <img
           src={perro}
@@ -44,13 +54,14 @@ function NavBarPetludos() {
           alt="Logo Petludos, perro de color naranja animado"
         />
       </Navbar.Brand>
-      <Navbar.Brand className="NavBar-Text" id="pageName"><strong className="Bold">PET</strong>LUDOS</Navbar.Brand>
+      <Navbar.Brand className={"NavBar-Text-"+accessibleText} id="pageName"><strong className="Bold">PET</strong>LUDOS</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav >
-          <Nav.Link className="NavBar-Text" onClick={(e)=>navigateToHome(e)}>Inicio</Nav.Link>
-          <Nav.Link className="NavBar-Text" onClick={(e)=>navigateToAdoption(e)}>Adopción</Nav.Link>
-          <Nav.Link className="NavBar-Text" onClick={(e)=>navigateToFAQ(e)}>Preguntas Frecuentes</Nav.Link>
+          <Nav.Link className={"NavBar-Text-"+accessibleText} onClick={(e)=>navigateToHome(e)}>Inicio</Nav.Link>
+          <Nav.Link className={"NavBar-Text-"+accessibleText} onClick={(e)=>navigateToAdoption(e)}>Adopción</Nav.Link>
+          <Nav.Link className={"NavBar-Text-"+accessibleText} onClick={(e)=>navigateToFAQ(e)}>Preguntas Frecuentes</Nav.Link>
+          <Nav.Link className={"NavBar-Text-"+accessibleText} onClick={handleAccessibility}>Accesibilidad</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       <Navbar.Collapse className="justify-content-end">

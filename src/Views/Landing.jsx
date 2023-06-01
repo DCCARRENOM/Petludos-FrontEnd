@@ -6,10 +6,10 @@ import FooterPetludos from "../componentes/FooterPetludos";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
 
-export default function Landing() {
+export default function Landing({setAccessibleText, accessibleText}) {
     return (
         <>
-            <NavBarPetludos />
+            <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>
             <BodyPetludos />
             <TestimonyPetludos />
             <FooterPetludos />
