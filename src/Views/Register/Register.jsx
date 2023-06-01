@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
-export default function Register() {
+export default function Register({setAccessibleText, accessibleText}) {
 
   const navigate = useNavigate();
 
@@ -68,7 +68,7 @@ export default function Register() {
 
   return (
     <>
-    <NavBarPetludos/>
+    <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>
     <div className="containerGeneralRegister">
       <div className="containerFormRegister">
         <div className="ImageRegister">

@@ -5,7 +5,7 @@ import "./Login.css";
 import Swal from "sweetalert2";
 import { Routes, Route, useNavigate, Link } from "react-router-dom";
 
-export default function Login() {
+export default function Login({setAccessibleText, accessibleText}) {
   const navigate = useNavigate();
   const [user, setInput] = useState({
     identifier: "",
@@ -73,7 +73,7 @@ export default function Login() {
 
   return (
     <>
-    <NavBarPetludos />
+    <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>
     <div className="containerGeneralLogin">
       <div className="ContainerFormLogin">
         <div className="ImageLogin">

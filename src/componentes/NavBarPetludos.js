@@ -33,7 +33,6 @@ function NavBarPetludos({setAccessibleText, accessibleText}) {
   }
 
   const handleAccessibility = () => {
-    console.log('acambiop');
     if(accessibleText=='normal'){
       setAccessibleText('accessibility')
     }else{
@@ -65,7 +64,7 @@ function NavBarPetludos({setAccessibleText, accessibleText}) {
         </Nav>
       </Navbar.Collapse>
       <Navbar.Collapse className="justify-content-end">
-        <Navbar.Text className="NavBar-Text">
+        <Navbar.Text className={"NavBar-Text-"+accessibleText}>
           <FontAwesomeIcon className="NavBar-Icon" icon={faGear} style={{ color: "#ffffff", }}/>
           <FontAwesomeIcon className="NavBar-Icon" icon={faBell} style={{ color: "#ffffff" }} />
           <b className="handHover" onClick={(e)=>navigateToLogin(e)}>Ingresar</b>

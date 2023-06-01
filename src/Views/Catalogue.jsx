@@ -8,7 +8,7 @@ import CardPet from '../componentes/Catalogue/CardPet'
 import FooterPetludos from '../componentes/FooterPetludos'
 
 
-export default function Catalogue() {
+export default function Catalogue({setAccessibleText, accessibleText}) {
     
     const [catalogoPets, setCatalogoPets] = useState([]);
     const [metaPets, setMetaPets] = useState([]);
@@ -31,7 +31,7 @@ export default function Catalogue() {
 
     return (
         <>
-            <NavBarPetludos></NavBarPetludos>
+            <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}></NavBarPetludos>
             <HeaderCatalogue></HeaderCatalogue>
             <article className='containerCardPet'>
             {!catalogoPets ? 'CARGANDO':

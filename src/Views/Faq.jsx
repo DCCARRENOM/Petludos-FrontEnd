@@ -4,10 +4,10 @@ import HeaderFaq from '../componentes/FAQ/HeaderFaq'
 import QuestionsFaq from '../componentes/FAQ/QuestionsFaq'
 import FooterPetludos from '../componentes/FooterPetludos'
 
-export default function Faq() {
+export default function Faq({setAccessibleText, accessibleText}) {
   return (
     <>
-      <NavBarPetludos></NavBarPetludos>
+      <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}></NavBarPetludos>
       <HeaderFaq></HeaderFaq>
       <QuestionsFaq></QuestionsFaq>
       <FooterPetludos></FooterPetludos>

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import TestimonyCard from "./TestimonyCard";
 import '../CSS/TestimonyPetludos.css'
 
-function TestimonyPetludos() {
+function TestimonyPetludos({accessibleText}) {
 
     const [Testimonies, setTestimonies] = useState([]);
     const [Loading, setLoading] = useState(false)
@@ -35,7 +35,7 @@ function TestimonyPetludos() {
 
                         {
                             Testimonies.map((Testimony, index) => {
-                                return <TestimonyCard info={Testimony} key={index} />
+                                return <TestimonyCard info={Testimony} key={index} accessibleText={accessibleText}/>
                             })
                         }
 

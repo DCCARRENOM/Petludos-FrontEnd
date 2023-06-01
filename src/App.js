@@ -20,22 +20,22 @@ function App() {
   const [accessibleText, setAccessibleText] = useState('normal');  //normal || accessibility
 
   return (
-    <div id="home">
+    <div id="home" className={'content-'+accessibleText}>
 
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>} />
-          <Route path='/faq' element={<Faq />} />
-          <Route path='/catalogo' element={<Catalogue />}/>
-          <Route path='/mascota/:id' element={<Pet />} />
+          <Route path='/faq' element={<Faq setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>} />
+          <Route path='/catalogo' element={<Catalogue setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>}/>
+          <Route path='/mascota/:id' element={<Pet setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>} />
           <Route path='*' element={<Navigate to='/' />} />
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>}/>
+          <Route path='/register' element={<Register setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>}/>
           {/*Vistas Logueado*/}
-          <Route path='/Logged' element={<LandingLogged/>}/>
-          <Route path='/catalogoLogged' element={<CatalogueLogged />}/>
-          <Route path='/faqLogged' element={<FaqLogged />} />
-          <Route path='/mascotaLogged/:id' element={<PetLogged />} />
+          <Route path='/Logged' element={<LandingLogged setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>}/>
+          <Route path='/catalogoLogged' element={<CatalogueLogged setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>}/>
+          <Route path='/faqLogged' element={<FaqLogged setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>} />
+          <Route path='/mascotaLogged/:id' element={<PetLogged setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>} />
         </Routes>
       </BrowserRouter>
 

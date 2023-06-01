@@ -9,7 +9,7 @@ import CardPetLogged from '../componentes/Catalogue/CardPetLogged';
 import FooterPetludos from '../componentes/FooterPetludos'
 
 
-export default function CatalogueLogged() {
+export default function CatalogueLogged({setAccessibleText, accessibleText}) {
     const {state} = useLocation();
     const UserID = state;
     
@@ -34,7 +34,7 @@ export default function CatalogueLogged() {
 
     return (
         <>
-            <NavBarPetludosLogged UserID={UserID.id}/>
+            <NavBarPetludosLogged UserID={UserID.id} setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>
             <HeaderCatalogue></HeaderCatalogue>
             <article className='containerCardPet'>
             {!catalogoPets ? 'CARGANDO':

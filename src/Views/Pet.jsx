@@ -4,7 +4,7 @@ import HeaderPet from '../componentes/Pet/HeaderPet'
 import PetAdoption from '../componentes/Pet/PetAdoption'
 import FooterPetludos from '../componentes/FooterPetludos'
 
-export default function Pet() {
+export default function Pet({setAccessibleText, accessibleText}) {
   return (
     <>
       <NavBarPetludos></NavBarPetludos>

@@ -11,7 +11,7 @@ export default function Landing({setAccessibleText, accessibleText}) {
         <>
             <NavBarPetludos setAccessibleText={setAccessibleText} accessibleText={accessibleText}/>
             <BodyPetludos />
-            <TestimonyPetludos />
+            <TestimonyPetludos accessibleText={accessibleText}/>
             <FooterPetludos />
         </>
     )
